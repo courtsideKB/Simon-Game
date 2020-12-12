@@ -7,6 +7,43 @@ body {
 
 /************************************************CLASS SELECTORS************************************************/
 
+/* Colored Buttons */
+
+.btn {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 25px;
+    border: 10px solid #5a5658;
+    border-radius: 20%;
+
+}
+
+.green {
+    background: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
+
+/* Containers */
+
+.container {
+    margin: auto;
+    width: 50%;
+}
+
+/************************************************ID SELECTORS************************************************/
+
 #title {
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
@@ -14,6 +51,3 @@ body {
     color: #ecebeb;
     text-shadow: 3px 0 #959193;
 }
-
-/************************************************ID SELECTORS************************************************/
-
