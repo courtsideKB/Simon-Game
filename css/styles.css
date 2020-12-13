@@ -9,6 +9,11 @@ body {
 
 /* Colored Buttons */
 
+.pressed {
+    box-shadow: 0 0 20px white;
+    background-color: grey;
+}
+
 .btn {
     display: inline-block;
     width: 200px;
