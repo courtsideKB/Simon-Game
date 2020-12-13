@@ -5,7 +5,7 @@ var gamePattern = [];
 var userClickedPattern = [];
 
 $(".btn").click(function () {
-   var userChosenColor = $(this).attr("id");
+    var userChosenColor = $(this).attr("id");
     userClickedPattern.push(userChosenColor);
 
     playSound(userChosenColor);
@@ -21,9 +21,9 @@ function playSound(name) {
 function animatePress(currentColor) {
     $("#" + currentColor).addClass("pressed");
 
-    setTimeout(function() {
+    setTimeout(function () {
         $("#" + currentColor).removeClass("pressed")
-    },100);
+    }, 100);
 }
 
 /* Generate random number for sequence */
