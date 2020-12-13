@@ -16,6 +16,10 @@ function playSound(name) {
     media.play();
 }
 
+function animatePress(currentColor) {
+    
+}
+
 /* Generate random number for sequence */
 
 function nextSequence() {
