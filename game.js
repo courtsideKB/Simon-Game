@@ -5,10 +5,12 @@ var gamePattern = [];
 var userClickedPattern = [];
 
 $(".btn").click(function () {
-    var userChosenColor = $(this).attr("id");
+   var userChosenColor = $(this).attr("id");
     userClickedPattern.push(userChosenColor);
 
     playSound(userChosenColor);
+
+    animatePress(userChosenColor);
 });
 
 function playSound(name) {
@@ -17,7 +19,11 @@ function playSound(name) {
 }
 
 function animatePress(currentColor) {
-    
+    $("#" + currentColor).addClass("pressed");
+
+    setTimeout(function() {
+        $("#" + currentColor).removeClass("pressed")
+    },100);
 }
 
 /* Generate random number for sequence */
@@ -31,4 +37,6 @@ function nextSequence() {
     $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
 
     playSound(randomChosenColor);
+
+    animatePress(randomChosenColor);
 }
