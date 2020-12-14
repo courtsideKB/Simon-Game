@@ -40,6 +40,11 @@ body {
     background-color: blue;
 }
 
+.game-over {
+    background-color: red;
+    opacity: 0.8;
+}
+
 /* Containers */
 
 .container {
