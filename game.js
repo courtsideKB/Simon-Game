@@ -7,6 +7,7 @@ var started = false;
 
 var level = 0;
 
+/* User Inputs */
 $(".btn").click(function () {
     var userChosenColor = $(this).attr("id");
     userClickedPattern.push(userChosenColor);
