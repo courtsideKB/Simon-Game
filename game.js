@@ -25,6 +25,27 @@ $(document).keypress(function () {
     }
 });
 
+function checkAnswer(currentLevel) {
+    if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
+        console.log("Success");
+
+        if (userClickedPattern.length === gamePattern.length) {
+            setTimeout(function () {
+                nextSequence();
+            }, 1000);
+        }
+    } else {
+        console.log("Wrong");
+        playSound("wrong");
+        $("body").addClass("game-over");
+        setTimeout(function () {
+            $("body").removeClass("game-over");
+        }, 200);
+        $("#title").text("Game Over, Press Any Key to Restart");
+        startOver();
+    }
+}
+
 /* Generate random number for sequence */
 
 function nextSequence() {
@@ -54,18 +75,8 @@ function animatePress(currentColor) {
     }, 100);
 }
 
-function checkAnswer(currentLevel) {
-    if (userClickedPattern[currentLevel] != gamePattern[currentLevel]) {
-        var media = new Audio("Sounds/wrong.mp3");
-        media.play()
-        $("body").addClass("game-over");;
-        $("h1").text("Game Over, Press Any Key to Restart");
-        setTimeout(function () {
-            $("body").removeClass("game-over");
-        }, 200);
-    } else if (userClickedPattern.length === gamePattern.length) {
-        setTimeout(function () {
-            nextSequence();
-        }, 100);
-    }
-}
+function startOver() {
+    level = 0;
+    gamePattern = [];
+    started = false;
+};
