@@ -55,14 +55,15 @@ function animatePress(currentColor) {
 }
 
 function checkAnswer(currentLevel) {
-    if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
-        console.log("Success");
-    } else {
-        console.log("Wrong");
-    }
-
-    if (userClickedPattern.length === gamePattern.length) {
-        setTimeout(function() {
+    if (userClickedPattern[currentLevel] != gamePattern[currentLevel]) {
+        var media = new Audio("Sounds/wrong.mp3");
+        media.play();
+        $("h1").text("Game Over, Press Any Key to Restart");
+        setTimeout(function () {
+            $("body").addClass("game-over");
+        }, 200);
+    } else if (userClickedPattern.length === gamePattern.length) {
+        setTimeout(function () {
             nextSequence();
         }, 100);
     }
